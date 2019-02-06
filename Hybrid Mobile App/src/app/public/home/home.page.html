@@ -34,13 +34,15 @@
                         <ion-col align-self-center>
                        <h5>        Time: {{ride.time}}  Price {{ride.amount}}$</h5> 
                         </ion-col>
-                        <ion-col text-right>
-                            <ion-button fill="clear" color="primary" (click)="bookRide(ride)">
-                              Book
-                            </ion-button>
-                          </ion-col>
+                        
                       </ion-row>
-                      
+                      <ion-row>
+                          <ion-col text-right>
+                              <ion-button fill="clear" color="primary" (click)="bookRide(ride)">
+                                Book
+                              </ion-button>
+                            </ion-col>
+                      </ion-row>
                 </ion-card-title>
               </ion-card-header>
           </ion-card> 

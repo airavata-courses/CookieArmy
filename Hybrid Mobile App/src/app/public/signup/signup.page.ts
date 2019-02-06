@@ -24,6 +24,7 @@ export class SignupPage implements OnInit {
    //createRide
     this.authService.signup(this.email,this.name,this.password).subscribe(
       (data)=>{
+        console.log(data)
         if(data.access_token){
           this.router.navigate(['home']);
         }

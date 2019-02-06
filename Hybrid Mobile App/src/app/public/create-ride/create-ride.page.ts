@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Ride } from 'src/app/models/ride';
 import { AddRide } from 'src/app/models/addride';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-create-ride',
@@ -11,7 +13,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class CreateRidePage implements OnInit {
   date:string='';
   ride:AddRide={rideid:'',date:'', source:'',destination:'',time:'',amount:0,name:'',contact_details:'',}; 
-  constructor(private authService:AuthenticationService) { }
+  constructor(private authService:AuthenticationService,private router:NavController) { }
   ngOnInit() {
   }
 
@@ -23,6 +25,7 @@ export class CreateRidePage implements OnInit {
     this.authService.addride(this.ride).subscribe(
       (asd)=>{
         console.log(asd);
+        this.router.pop();
       }
     )
   }

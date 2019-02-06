@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
   constructor(private auth:AuthenticationService,private router:Router,private navController:NavController) { }
 
   ngOnInit() {
-    this.ridesAvialable=this.auth.getrides();
+    
     
     //this.auth.getTest();
     //console.log(this.ridesAvialable)
@@ -63,6 +63,7 @@ export class HomePage implements OnInit {
   }
 
   ionViewDidEnter(){
+    this.ridesAvialable=this.auth.getrides();
     this.auth.authenticationState.subscribe(state=>{
       console.log('change '+state);
         if(state){
