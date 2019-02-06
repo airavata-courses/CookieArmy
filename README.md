@@ -1,8 +1,6 @@
 # CookieArmy
-<<<<<<< HEAD
+### Please check the Wiki Page for release Instructions for Entire release Instructions
 
-### Please check the Wiki Page for release Instructions
-=======
 # SETUP PYTHON FLASK MICROSERVICE ENVIRONMENT
 
 
