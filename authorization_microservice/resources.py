@@ -65,6 +65,5 @@ class UserLogoutAccess(Resource):
 
 class SecretResource(Resource):
     def get(self):
-        return {
-            'answer': 42
-        }
+        return {'message': 'Accessing authorized resource'}
+        
