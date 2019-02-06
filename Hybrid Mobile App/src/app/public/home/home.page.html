@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-buttons>
+                <ion-menu-button slot="start">
+                </ion-menu-button>
+              </ion-buttons>
+        </ion-col>
+        <ion-col>
+            <ion-title text-center>Available Rides</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-title text-center>Available Rides</ion-title>
+      <ion-button *ngIf="isAuthenticated" fill="clear" slot="end" (click)=createRide()>
+                <ion-icon name="add-circle-outline"></ion-icon>
+              </ion-button> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+          <ion-card  *ngFor="let ride of (ridesAvialable | async); let i = index; ">
+            <ion-card-header>
+                <ion-card-subtitle>
+                  {{ride.date}}
+                </ion-card-subtitle>
+                <ion-card-title>
+                 <h3>   {{ride.source}} - {{ride.destination}}</h3>
+                </ion-card-title>
+                <ion-card-title>
+                    <ion-row>
+                        <ion-col align-self-center>
+                       <h5>        Time: {{ride.time}}  Price {{ride.amount}}$</h5> 
+                        </ion-col>
+                        <ion-col text-right>
+                            <ion-button fill="clear" color="primary" (click)="bookRide(ride)">
+                              Book
+                            </ion-button>
+                          </ion-col>
+                      </ion-row>
+                      
+                </ion-card-title>
+              </ion-card-header>
+          </ion-card> 
+          
+</ion-content>
+<ion-content>
+    <ion-tabs>
+    
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button (click)="home()">
+            <ion-icon name="car"></ion-icon>
+            <ion-label>Available Rides</ion-label>             
+          </ion-tab-button>
+    
+          <ion-tab-button (click)="requestedrides()" >
+            <ion-icon name="help-buoy"></ion-icon>
+            <ion-label>Requested Rides</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+    
+      </ion-tabs>
+</ion-content>
