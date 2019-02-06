@@ -1,0 +1,49 @@
+<html>
+    <title>PersonRating</title>
+   	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="forms.js"> </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  	<div id="title">Welcome to CookieArmy rating!</div>
+  	<div id="subTitleCaption">"Where one can rate another" - G.I.J.S.</div>
+  	<br>
+  	<br>
+  	<table border="1">
+  		<tr>
+        <td>  
+          <form id="f1">
+            <div class="fheader">Create a new rating (PUT):</div>
+            Name: <input id="e1" type="text" name="e1"><br>
+            For: <input id="e1_2" type="text" name="e1_2"><br> 
+            Rating: <input id="e1_3" type="text" name="e1_3"><br> 
+            Comment: <input id="e1_4" type="text" name="e1_4"><br> 
+            <input type="submit" value="Submit">
+          </form>
+          <div id="div1"> </div>
+        </td>        
+  			<td>
+				<form id="f2">
+				  <div class="fheader">Modify a rating (POST): </div>
+				  Name:<input id="personName" type="text" name="personName"><br>
+          For:<input id="personFor" type="text" name="personFor"><br>
+				  Rating: <input id="newRating" type="text" name="newRating"><br>
+				  Comment: <input id="newComment" type="text" name="newComment"><br>
+				  <input type="submit" value="Submit">
+				</form>
+				<div id="div2"> </div>
+  			</td>
+  		</tr>
+  	</table>
+  	<br>
+
+		<form id="f4">
+			<div class="fheader">Find a rating (GET): </div>
+			<input id="e4" type="text" name="e4"><br>
+			<input type="submit" value="Submit">
+		</form>
+		<div id="div4"> </div>
+
+
+</body>
+</html>
