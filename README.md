@@ -3,13 +3,13 @@ SETUP PYTHON FLASK MICROSERVICE ENVIRONMENT
 
 
 # Steps: 
-⋅⋅1.	Install Python
-⋅⋅2.	Install Pip
-⋅⋅*	Install VirtualEnv
-⋅⋅*	Install VirtualEnvWrapper-win
-⋅⋅*	Import project files
-⋅⋅*	Install dependencies and requirements
-⋅⋅*	Run the project
+*	Install Python
+*	Install Pip
+*	Install VirtualEnv
+*	Install VirtualEnvWrapper-win
+*	Import project files
+*	Install dependencies and requirements
+*	Run the project
 
 # Step 1: Installing Python
 ⋅⋅*	Go to Python downloads site (https://www.python.org/downloads/) download and run the installer. Add python to the PATH  which will allow you call it from command line. Confirm that C:\Python27; and C:\Python27\Scripts; is part of your path.
