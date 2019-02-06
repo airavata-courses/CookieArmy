@@ -47,7 +47,8 @@ e.g. To deactivate the environment: deactivate
        To renter at the same path and activate the environment from cmd: workon myflaskenv
        e.g. C:\Users\workon myflaskenv
 
-## Step 8: Run Flask APP (From inside (myflaskenv) C:\Users\J\authorization_microservice\)
+## Step 8: Run Flask APP (From inside (myflaskenv) 
+    e.g. C:\Users\J\authorization_microservice\)
 
 *	set FLASK_APP=run.py
 *	set FLASK_DEBUG=1
