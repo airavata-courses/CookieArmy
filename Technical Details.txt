@@ -1,0 +1,34 @@
+
+Technical details:
+User
+passenger or driver
+
+Driver
+rate passenger
+
+Passenger
+rate driver
+
+Driver and passenger can only see their rating.
+They can see their past ratings for a person
+
+Fields:
+1) Name:
+Limit 100 characters
+2) Role:
+driver OR passenger (not supported yet)
+3) Rating:
+0-5 with tenths decimal allowed
+4) # rides	
+	# rides given:
+	driver role only
+	# rides joined
+	passr role only
+	(Kept track of in backend. Starts at 0 for all users)
+5) Comment
+
+Some design thoughts:
+1. As a user is created for main application, the protocol will be to create equivalent accounts for Rating feature. A passenger and driver account will be created. This is why PUT request is not needed for rating feature
+
+ToDo:
+1. Enable way to create composite key for current user and user that rating is for. This will identify a unique user-forUserRating key
