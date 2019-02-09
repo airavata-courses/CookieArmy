@@ -31,7 +31,7 @@ public class Offering_a_ride_DAOIMPL implements Offering_a_ride_DAO {
 		jdbcTemplate.update((Connection connection) -> {
 			PreparedStatement preparedStatement;
 			preparedStatement = connection.prepareStatement(
-					"INSERT INTO `offering`.`offering_a_ride` (`Name`, `Contact Details`, `Source`, `Destination`, `DATE` , `Time`, `Amount`) VALUES (?,?,?,?,?,?,?);",
+					"INSERT INTO `offering`.`offering_a_ride` (`Name`, `Contact_Details`, `Source`, `Destination`, `DATE` , `Time`, `Amount`) VALUES (?,?,?,?,?,?,?);",
 					Statement.RETURN_GENERATED_KEYS);
 			preparedStatement.setString(1, offering.getName());
 			preparedStatement.setString(2, offering.getContact_details());
