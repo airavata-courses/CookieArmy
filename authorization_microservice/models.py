@@ -1,6 +1,8 @@
 from run import db
 from passlib.hash import pbkdf2_sha256 as sha256
 
+
+# This class will create the database table and specify the attributed of the table.
 class UserModel(db.Model):
     __tablename__ = 'usertable'
 
@@ -9,20 +11,25 @@ class UserModel(db.Model):
     name = db.Column(db.String(120), nullable = False)
     password = db.Column(db.String(120), nullable = False)
 
-    def save_to_db(self):
+    # This will save the information to the database.
+    def save_info(self):
         db.session.add(self)
         db.session.commit()
 
+    # This method will search the user by email and will return the email if found.
     @classmethod
-    def find_by_email(cls,email):
+    def search_email(cls,email):
         return cls.query.filter_by(email = email).first()
 
+    # This method will genetate the hash code for the correspoding password.
     @staticmethod
-    def generate_hash(password):
+    def encrypt_password(password):
         return sha256.hash(password)
 
+    # This method checks if the given password and hashcode matches.
     @staticmethod
-    def verify_hash(password, hash):
+    def check_password(password, hash):
         return sha256.verify(password, hash)
 
-    
+
+    # based on the reference flask architecture given on https://codeburst.io/jwt-authorization-in-flask-c63c1acf4eeb
