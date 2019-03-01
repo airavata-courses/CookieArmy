@@ -12,4 +12,4 @@ npm install express-handlebars ;
 npm install nodemailer;
 npm install cors;
 #node app.js &
-BUILD_ID=dontKillMe node app.js &
+node app.js 
