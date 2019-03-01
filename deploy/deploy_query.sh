@@ -1,0 +1,7 @@
+sudo mysql -u root -ppassword -e "CREATE SCHEMA offering;"
+sudo mysql -u root -ppassword -e "use offering;"
+sudo mysql -u root -ppassword -e "CREATE TABLE offering.offering_a_ride ( ID INT NOT NULL AUTO_INCREMENT, DATE VARCHAR(45) NOT NULL, Name VARCHAR(45)NOT NULL, source VARCHAR(45) NOT NULL, destination VARCHAR(45) NOT NULL, time VARCHAR(45) NOT NULL, amount VARCHAR(45)NOT NULL, Passenger1 VARCHAR(45) NULL DEFAULT 'Available', Passenger2 VARCHAR(45) NULL DEFAULT 'Available', Passenger3 VARCHAR(45) NULL DEFAULT 'Available', Contact_Details VARCHAR(45) NOT NULL, PRIMARY KEY (ID));"
+sudo mysql -u root -ppassword -e "use offering;CREATE OR REPLACE VIEW offer_ride_view AS select Date,ID,name,source,destination,time,amount from offering_a_ride order by Date ASC;"
+sudo mysql -u root -ppassword -e "INSERT INTO offering.offering_a_ride (DATE, Name, Source, Destination, time, amount, Contact_Details) VALUES ('Feb 09 2019', 'Gattu', 'Bloomington', 'Chicago', '11:30', '25', 'ramgattu@iu.edu'); "
+sudo mysql -u root -ppassword -e "INSERT INTO offering.offering_a_ride (DATE, Name, Source, Destination, time, amount, Contact_Details) VALUES ('Feb 10 2019', 'Ishneet', 'Chicago', 'Bloomington', '17:30', '45', 'iarora@iu.edu'); "
+sudo mysql -u root -ppassword -e "INSERT INTO offering.offering_a_ride (DATE, Name, Source, Destination,time, amount, Contact_Details) VALUES ('Feb 10 2019', 'Jainendra', 'Indianapolis', 'Bloomington', '21:30', '15','jainendrakumar10@gmail.com');"
