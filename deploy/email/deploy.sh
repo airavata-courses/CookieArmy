@@ -11,4 +11,4 @@ npm install express;
 npm install express-handlebars ;
 npm install nodemailer;
 npm install cors;
-node app.js;
+node app.js &
