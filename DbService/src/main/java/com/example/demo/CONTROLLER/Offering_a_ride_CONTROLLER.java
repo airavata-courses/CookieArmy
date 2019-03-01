@@ -14,7 +14,7 @@ import com.example.demo.DAO.Offering_a_ride_DAO;
 import com.example.demo.Offering.Offering_a_ride;
 import com.example.demo.Offering.Offering_a_ride_2;
 
-@CrossOrigin(origins = {"http://localhost:8100","http://localhost:8080"})
+@CrossOrigin(origins = {"http://localhost:8100","http://localhost:8082"})
 @RestController
 public class Offering_a_ride_CONTROLLER {
 
