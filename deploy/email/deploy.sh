@@ -11,5 +11,8 @@ npm install express;
 npm install express-handlebars ;
 npm install nodemailer;
 npm install cors;
+sudo npm install pm2@latest -g
 #node app.js &
-node app.js 
+#node app.js 
+pm2 restart app.js
+
