@@ -69,7 +69,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json'
       })
     };
-     this.http.post<myData>("http://149.165.168.54:7998/login",{email:email,password:password},httpOptions)
+     this.http.post<myData>("http://149.165.170.252:7998/login",{email:email,password:password},httpOptions)
           .subscribe(data => {
 
             this.storage.set(EMAIL,data.email).then(
@@ -155,13 +155,13 @@ export class AuthenticationService {
 
     const headers=new HttpHeaders()
                       .set('content-type','application/json');
-  return this.http.post<sign>("http://149.165.168.54:7998/registration",JSON.stringify(this.user),{headers:headers})
+  return this.http.post<sign>("http://149.165.170.252:7998/registration",JSON.stringify(this.user),{headers:headers})
                         
   }
 
   getrides():Observable<any>{
     console.log('before')
-   return this.http.get("http://149.165.157.87:8080/offering")
+   return this.http.get("http://149.165.157.87:8082/offering")
                 .pipe(
                   map(results=>{
                     return results;
@@ -177,7 +177,7 @@ export class AuthenticationService {
       })
     };
     console.log('test');
-   this.http.post("http://149.165.168.54:7998/login",{email:'test32',password:'test32'},httpOptions).pipe(
+   this.http.post("http://149.165.170.252:7998/login",{email:'test32',password:'test32'},httpOptions).pipe(
      map(result=>{
        return result;
      })
@@ -196,7 +196,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.post("http://149.165.157.87:8080/confirm",{rideid:ride.rideid,passenger1:this.name,passenger3:this.name,
+    return this.http.post("http://149.165.157.87:8082/confirm",{rideid:ride.rideid,passenger1:this.name,passenger3:this.name,
           passenger2:this.name},httpOptions)
             .pipe(
                 map(result=>{
@@ -215,7 +215,7 @@ export class AuthenticationService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.post("http://149.165.157.87:8080/offering",
+    return this.http.post("http://149.165.157.87:8082/offering",
     {name:ride.name,contact_details:ride.contact_details,source:ride.source,destination:ride.destination,date:ride.date,
       time:ride.time,amount:ride.amount},httpOptions)
             .pipe(
@@ -234,7 +234,7 @@ export class AuthenticationService {
           'Content-Type':  'application/json'
         })
       };
-      return this.http.post("http://149.165.168.207:3000/send",
+      return this.http.post("http://149.165.170.87:3000/send",
       {name:this.name,email:this.email,message:"Booking Confirmed"},httpOptions)
               .pipe(
                   map(result=>{
