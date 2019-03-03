@@ -29,6 +29,7 @@ public class Offering_a_ride_CONTROLLER {
 
 	@RequestMapping(value="/history",method=RequestMethod.GET)
 	public ResponseEntity<Object> offering_history(@RequestBody Offering_a_ride_2 offering){
+		//commit for testing Jenkins
 		//offering_a_ride_DAO.offering_history(offering);
 		 return new ResponseEntity<>(offering_a_ride_DAO.offering_history(offering),HttpStatus.OK);
 	}
