@@ -3,17 +3,23 @@ echo "SETTING UP FLASK ENVIRONMENT"
 sudo apt-get -y install python3.6
 sudo apt install -y python3-pip
 sudo apt-get install -y python3-venv
-#localdir="$(PWD)/environments"
-if [ -d ~/sga/jenkins/authentication/environments ]
+localdir="/home/ubuntu/sga/jenkins/myflaskenv"
+if [ -d $localdir ]
 then
-	echo -e "Directory ' environments' already exits, exiting "...\n
+	echo -e "Directory $localdir already exits, "...\n
+	cd /home/ubuntu/sga/jenkins
+	source myflaskenv/bin/activate
+	cd authentication
+	cd workspace
+	cd authentication
+	cd authorization_microservice
+	export FLASK_APP=run.py
+	set FLASK_APP=run.py
+	set FLASK_DEBUG=1
+	BUILD_ID=dontKillMe flask run --host=0.0.0.0 --port=8080 &
+	echo "Running in Background"
 else
-	mkdir ~/sga
-	mkdir ~/sga/jenkins
-	mkdir ~/sga/jenkins/authentication
-	mkdir ~/sga/jenkins/authentication/environments
-	cd ~/sga/jenkins/authentication/environments
-	git clone https://github.com/airavata-courses/CookieArmy.git --branch development
+	cd /home/ubuntu/sga/jenkins
 	sudo python3 -m venv myflaskenv
 	source myflaskenv/bin/activate
 	sudo pip3 install alembic==0.9.9
@@ -54,12 +60,15 @@ else
 	sudo pip3 install flask-jwt-extended
 	sudo pip3 install passlib
 	sudo pip3 install flask-cors
-	cd CookieArmy
+	cd authentication
+	cd workspace
+	cd authentication
 	cd authorization_microservice
 	export FLASK_APP=run.py
 	set FLASK_APP=run.py
 	set FLASK_DEBUG=1
-	flask run --port=7998
+	BUILD_ID=dontKillMe flask run --host=0.0.0.0 --port=8080 &
+	echo "Run Successfully"
 	
 
 fi
