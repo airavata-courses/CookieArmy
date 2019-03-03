@@ -10,21 +10,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 public class SgaMysqlFinalApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SgaMysqlFinalApplication.class, args);
-	}
-	
-	
-	    @Bean
+        public static void main(String[] args) {
+                SpringApplication.run(SgaMysqlFinalApplication.class, args);
+        }
+
+
+            @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/offering").allowedOrigins(""http://149.165.157.87:8082"");
+                registry.addMapping("/offering").allowedOrigins("http://149.165.157.87:8082");
             }
         };
     }
-	
-	
-}
 
+
+}
