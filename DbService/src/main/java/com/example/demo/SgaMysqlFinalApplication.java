@@ -23,6 +23,7 @@ public class SgaMysqlFinalApplication {
                 registry.addMapping("/offering").allowedOrigins("http://149.165.157.87:8082");
             }
         };
+
     }
 
 
