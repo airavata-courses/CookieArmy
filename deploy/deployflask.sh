@@ -1,7 +1,5 @@
 #!/bin/bash
 echo "SETTING UP FLASK ENVIRONMENT"
-sudo apt-get update
-sudo apt install git
 sudo apt-get -y install python3.6
 sudo apt install -y python3-pip
 sudo apt-get install -y python3-venv
