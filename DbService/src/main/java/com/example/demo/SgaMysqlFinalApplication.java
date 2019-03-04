@@ -20,7 +20,7 @@ public class SgaMysqlFinalApplication {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/offering").allowedOrigins("http://149.165.157.87:8082");
+                registry.addMapping("/offering").lowedOrigins("http://149.165.157.87:8082");
             }
         };
 
