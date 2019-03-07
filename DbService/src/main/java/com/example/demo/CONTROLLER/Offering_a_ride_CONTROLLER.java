@@ -14,7 +14,7 @@ import com.example.demo.DAO.Offering_a_ride_DAO;
 import com.example.demo.Offering.Offering_a_ride;
 import com.example.demo.Offering.Offering_a_ride_2;
 
-@CrossOrigin(origins = {"http://localhost:8100","http://localhost:8082"})
+@CrossOrigin(origins = {"http://149.165.168.54:8100","http://149.165.157.87:8082"})
 @RestController
 public class Offering_a_ride_CONTROLLER {
 
@@ -29,6 +29,7 @@ public class Offering_a_ride_CONTROLLER {
 
 	@RequestMapping(value="/history",method=RequestMethod.GET)
 	public ResponseEntity<Object> offering_history(@RequestBody Offering_a_ride_2 offering){
+		//commit for testing Jenkins
 		//offering_a_ride_DAO.offering_history(offering);
 		 return new ResponseEntity<>(offering_a_ride_DAO.offering_history(offering),HttpStatus.OK);
 	}
