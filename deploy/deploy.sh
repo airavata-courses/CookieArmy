@@ -1,4 +1,4 @@
-echo "Executing"
+echo "Executing...."
 sudo apt update;
 sudo apt install mysql-server -y;
 sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
