@@ -4,6 +4,7 @@ from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
 
+
 app=Flask(__name__)
 CORS(app)
 
