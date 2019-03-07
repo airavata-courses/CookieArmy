@@ -2,7 +2,7 @@ var express = require('express')
   , routes = require('./routes')
 
 var app = express();
-  
+   
 // Configuration
 app.configure(function(){
   app.set('views', __dirname + '/views');
