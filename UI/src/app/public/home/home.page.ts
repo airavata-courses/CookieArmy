@@ -26,7 +26,7 @@ export class HomePage implements OnInit {
     //console.log(this.ridesAvialable)
   }
   confirm:Observable<any>
-  bookRide(ride:Ride){
+  async bookRide(ride:Ride){
     //console.log('here')
       //console.log(ride);
       if(this.auth.isauth){
@@ -41,15 +41,13 @@ export class HomePage implements OnInit {
         }
       );
       console.log(this.confirm)  
-      const loading=this.lcntroller.create({
+      const loading= await this.lcntroller.create({
         //keyboardClose:true,
         message:'Booking Confirmed'
-      }).then(
-        load=>{
-          console.log("dismissed");
-          load.onDidDismiss();  
-        }
-      )
+      //  duration:200
+      });
+      await loading.present();
+      const { role , data } = await loading.onDidDismiss();
       // send data to db and update in requirement
       }
       else{
