@@ -3,7 +3,7 @@ import { AddRide } from 'src/app/models/addride';
 import {Ride} from 'src/app/models/ride';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { NavController, LoadingController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   ridesAvialable:Observable<any>
   test:Observable<any>
   isAuthenticated:boolean=false
-  constructor(private auth:AuthenticationService,private router:Router,private navController:NavController) { }
+  constructor(private auth:AuthenticationService,private router:Router,private navController:NavController, private lcntroller:LoadingController) { }
 
   ngOnInit() {
     
@@ -41,6 +41,14 @@ export class HomePage implements OnInit {
         }
       );
       console.log(this.confirm)  
+      const loading=this.lcntroller.create({
+        //keyboardClose:true,
+        message:'Booking Confirmed'
+      }).then(
+        load=>{
+          load.onDidDismiss();  
+        }
+      )
       // send data to db and update in requirement
       }
       else{
