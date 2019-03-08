@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
-import { Platform, MenuController } from '@ionic/angular';
+import { Platform, MenuController, LoadingController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthenticationService } from './services/authentication.service';
 import { Router } from '@angular/router';
+import { LoadedRouterConfig } from '@angular/router/src/config';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private authService:AuthenticationService,
     private router:Router,
-    private menu: MenuController
+    private menu: MenuController,
+    private lcntroller:LoadingController
   ) {
     this.initializeApp();
   }
@@ -31,8 +33,19 @@ export class AppComponent {
         console.log('change '+state);
           if(state){
             this.isAuthenticated=true;
-             // this.router.navigate(['members','dashboard']);
-             this.router.navigate(['home']);
+            const loading=this.lcntroller.create({
+              //keyboardClose:true,
+              message:'Loggin u in.. '
+            }).then(
+              load=>{
+                load.present();
+              setTimeout(() => {
+                load.dismiss();
+                this.router.navigate(['home']);
+              }, 1500);  
+              }
+            ) 
+             
           }
           else{
             this.isAuthenticated=false;
