@@ -30,7 +30,7 @@ export class SignupPage implements OnInit {
         if(data.access_token){
           const loading=this.lcntroller.create({
             //keyboardClose:true,
-            message:'Signing u up...'
+            message:'Setting u up...'
           }).then(
             load=>{
               load.present();
