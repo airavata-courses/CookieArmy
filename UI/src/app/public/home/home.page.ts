@@ -46,6 +46,7 @@ export class HomePage implements OnInit {
         message:'Booking Confirmed'
       }).then(
         load=>{
+          console.log("dismissed");
           load.onDidDismiss();  
         }
       )
