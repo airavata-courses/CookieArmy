@@ -1,0 +1,12 @@
+version: '3'
+services:
+      EmailService:
+              build: .
+              ports:
+                      - "3000:3000"
+              image: iarora/emailservice
+              deploy:
+                      replicas: 3
+                      #                     restart_policy: on-failure
+
+
