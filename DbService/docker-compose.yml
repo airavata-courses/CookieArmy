@@ -1,0 +1,37 @@
+
+version: '3'
+
+services:
+      mysql:
+          image: mysql
+          container_name: CA_mysql
+          restart: always
+          ports:
+              - 3306:3306
+          environment:
+              MYSQL_ROOT_PASSWORD: "password"
+          volumes:
+              - mysql-db:/var/lib/mysql
+          deploy:
+                replicas: 3
+
+      spring:
+              image: spring-boot
+              build:
+                    context: .
+                    dockerfile: DockerfileS
+              depends_on:
+                            - mysql
+              ports: 
+                            - 8082:8082
+              volumes:
+                            - /data/spring-boot-app
+              deploy:
+                      replicas: 3
+
+
+
+volumes:                
+        mysql-db:
+                external: true
+
