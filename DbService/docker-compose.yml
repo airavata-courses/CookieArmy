@@ -16,7 +16,7 @@ services:
                 replicas: 3
 
       spring:
-              image: spring-boot
+              image: iarora/spring-boot
               build:
                     context: .
                     dockerfile: DockerfileS
