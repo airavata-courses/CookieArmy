@@ -1,0 +1,18 @@
+
+{
+    "ip":{
+        "auth":"http://149.165.170.252:7998"
+    },
+    "server":{
+      "auth":{
+        "newuser":"/registration",
+        "login":"/login"
+      },
+      "email":{
+
+      }  
+    },
+    "client":{
+        
+    }
+}
