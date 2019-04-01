@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  auth:
+    image: jainendrakumar10/auth2
+    ports: 
+      - 7998:5000
