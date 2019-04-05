@@ -9,11 +9,11 @@ pipeline {
         }
         stage('build maven') {
             steps {
-                dir("serviceRegistry") {
+                 
                     sh 'pwd'
                     sh 'mvn clean install'
                     sh 'mvn install package'
-                }
+                
             }
         }
     }}
