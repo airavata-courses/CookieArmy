@@ -20,12 +20,10 @@ pipeline {
                 }
             }
         }
-    }
-
-	post {
-        success{
-					sh '''
-                   			
+		stage('Build Docker Image and Run Application') {
+            agent { label 'DbService' }
+            steps {
+                dir("/home/ubuntu/sga/jenkins/workspace/DB_Service_full") {
 					sh 'sudo  docker service rm db_spring'
 					
 					sh 'sudo docker build -f DockerfileS -t iarora/springdb . '
@@ -34,7 +32,11 @@ pipeline {
 					sh 'sudo docker push iarora/springdb:latest'
 					sh 'sudo docker service create --name db_spring -p 8082:8082  iarora/springdb:latest'
 					sh 'sudo docker service update db_spring --replicas=3'
-					'''
-		}
+                    
+                }
+            }
+        }
+
+			
     }
 }
