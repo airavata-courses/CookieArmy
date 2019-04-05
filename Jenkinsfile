@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build maven') {
             steps {
-                dir("/home/ubuntu/sga/jenkins/workspace/DB_Service") {
+                dir("/home/ubuntu/DB") {
                     sh 'pwd'
                     sh 'ls -lrth'
                     
