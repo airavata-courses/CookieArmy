@@ -11,10 +11,11 @@ pipeline {
         stage('build maven') {
             agent { label 'DbService' }
             steps {
-                dir("/home/ubuntu/DB") {
+                dir("/home/ubuntu/sga/jenkins/workspace/DB_Service_full") {
                     sh 'pwd'
 		    sh 'hostname'
                     sh 'ls -lrth'
+		    sh 'mvn clean package'
                     
                 }
             }
