@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+        spring:
+              build:
+                   context: .
+                   dockerfile: Dockerfile
+              ports:
+                   - 8082:8082
+              image:
+                  iarora/dbservice3_spring:latest
+              volumes:
+                   - /data/spring-boot-app
+              deploy:
+                   replicas: 3
+
