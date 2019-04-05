@@ -1,20 +1,21 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent any
     stages {
-        stage('Build') {
+        stage('install dependencies') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                sh 'sudo apt-get install maven -y'
+		            sh 'mvn --version'
             }
         }
-        stage('Deliver') {
+        stage('build maven') {
             steps {
-                
+                dir("/home/ubuntu/sga/jenkins/workspace/DB_Service") {
+                    sh 'pwd'
+                    sh 'mvn clean package'
+                    
+                }
             }
         }
     }
+   
 }
