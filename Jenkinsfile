@@ -24,6 +24,8 @@ pipeline {
             steps {
                
             sh 'pwd'
+		    
+		    sh 'sudo apt --assume-yes install gnupg2 pass;'
 		    sh ' sudo docker build -t iarora/dbservice3_spring:latest .'
             sh 'sudo docker push iarora/dbservice3_spring:latest'
 		    
