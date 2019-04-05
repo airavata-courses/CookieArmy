@@ -28,6 +28,8 @@ pipeline {
 		    
 		    
 		    sh ' sudo docker build -t iarora/dbservice3_spring:latest .'
+		    sh 'chmod 777 docker-compose.yml'
+		    sh 'cp docker-compose.yml /mnt/sharedfolder/'
           
 		    
                 
@@ -38,8 +40,8 @@ pipeline {
 	
 	 post {
         success{
-	   sh 'scp docker-compose.yml ubuntu@149.165.157.145:/home/ubuntu/sga/DB2_Service'
-            sh 'ssh ubuntu@149.165.157.145 sudo docker stack deploy -c docker-compose.yml DB_request_ride'
+		sh 'sudo su - ubuntu'
+	        sh 'ssh ubuntu@149.165.157.145 sudo docker stack deploy -c /mnt/sharedfolder/docker-compose.yml DB_request_ride'
 			
 		}
     }
