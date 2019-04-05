@@ -35,9 +35,7 @@ pipeline {
 	
 	 post {
         success{
-		                  	
-		
-			sh 'scp docker-compose.yml ubuntu@149.165.157.145:/home/ubuntu/sga/DB2_Service
+	   sh 'scp docker-compose.yml ubuntu@149.165.157.145:/home/ubuntu/sga/DB2_Service'
             sh 'ssh ubuntu@149.165.157.145 sudo docker stack deploy -c docker-compose.yml DB_request_ride'
 			
 		}
