@@ -1,30 +1,23 @@
 pipeline {
     agent any
-    tools { 
-        maven 'Maven 3.3.9' 
-     
-    }
     stages {
-        stage ('Initialize') {
+        stage('install dependencies') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                sh 'sudo apt-get install maven -y'
+		sh 'mvn --version'
             }
         }
-
         stage('build maven') {
             steps {
                 dir("/home/ubuntu/sga/jenkins/workspace/DB_Service") {
                     sh 'pwd'
-                    sh 'mvn clean install'
-                    sh 'mvn install package'
+                    sh 'mvn clean package'
+                    
                 }
             }
         }
     }
-	post {
+    post {
         success{
 					sh '''
                    	cd /home/ubuntu/sga/jenkins/workspace/DB_Service/DbService
@@ -40,6 +33,4 @@ pipeline {
 					'''
 		}
     }
-	
-	
- }
+}
