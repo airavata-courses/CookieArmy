@@ -11,6 +11,7 @@ pipeline {
             steps {
                 dir("/home/ubuntu/sga/jenkins/workspace/DB_Service") {
                     sh 'pwd'
+		    sh 'ls -lrth'
 		    sh ' mvn -f /home/ubuntu/sga/jenkins/workspace/DB_Service/pom.xml clean install'
                     
                     
