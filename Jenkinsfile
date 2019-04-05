@@ -13,6 +13,7 @@ pipeline {
             steps {
                 dir("/home/ubuntu/DB") {
                     sh 'pwd'
+		    sh 'hostname'
                     sh 'ls -lrth'
                     
                 }
