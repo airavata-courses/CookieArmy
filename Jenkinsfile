@@ -11,7 +11,7 @@ pipeline {
             steps {
                 dir("/home/ubuntu/sga/jenkins/workspace/DB_Service") {
                     sh 'pwd'
-                    sh '/usr/share/maven/mvn clean package'
+                    sh 'mvn clean package'
                     
                 }
             }
