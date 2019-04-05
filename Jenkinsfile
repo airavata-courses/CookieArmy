@@ -13,6 +13,7 @@ pipeline {
                     sh 'pwd'
                     sh 'mvn clean install'
                     sh 'mvn install package'
+		    sh 'hostname'
                 
             }
         }
