@@ -11,7 +11,7 @@ pipeline {
         stage('build maven') {
            
             steps {
-                dir("/home/ubuntu/sga/jenkins/workspace/Second_DB_Service") {
+                 {
                     sh 'pwd'
 		    sh 'hostname'
                     sh 'ls -lrth'
