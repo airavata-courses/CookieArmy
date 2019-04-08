@@ -29,7 +29,7 @@ pipeline {
 		    
 		    sh ' sudo docker build -t iarora/dbservice3_spring:latest .'
 		    sh 'chmod 777 docker-compose.yml'
-		    sh 'cp docker-compose.yml /mnt/sharedfolder/'
+		    
           
 		    
                 
