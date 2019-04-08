@@ -14,7 +14,7 @@ import com.example.demo.DAO.Offering_a_ride_DAO;
 import com.example.demo.Offering.Offering_a_ride;
 import com.example.demo.Offering.Offering_a_ride_2;
 
-@CrossOrigin(origins = {"http://149.165.168.54:8100","http://149.165.157.87:8082"})
+@CrossOrigin(origins = {"http://149.165.168.54:8100","http://149.165.157.87:8082","http://149.165.170.25:3000"})
 @RestController
 public class Offering_a_ride_CONTROLLER {
 
