@@ -13,7 +13,7 @@ router.post("/bookride", (req, res) => {
     //format:{ password: 'hey', name: 'gatture1t', email: 'a123@y1213.com' }
     console.log(req.body);
     console.log("gattu"+" "+"all rides")
-    const errors = {};
+   const errors = {};
     axios.post(cache.ip.updateride+cache.server.updateride.bookride, req.body )
         .then((Response) => {
             console.log("sucess booked ride");
@@ -30,10 +30,10 @@ router.post("/bookride", (req, res) => {
 router.post("/add", (req, res) => {
     //format:{ password: 'hey', name: 'gatture1t', email: 'a123@y1213.com' }
     console.log(req.body);
-    console.log("gattu"+" "+"add")
+    console.log("gattu"+" "+" radd")
    const errors = {};
-   console.log(cache.ip.updateride+cache.server.updateride.add)
-    axios.post(cache.ip.updateride+cache.server.updateride.add, req.body )
+   console.log(cache.ip.updaterequets+cache.server.updaterequest.add)
+    axios.post(cache.ip.updaterequets+cache.server.updaterequest.add, req.body )
         .then((Response) => {
             console.log("sucess");
           return res.json(Response.data);       

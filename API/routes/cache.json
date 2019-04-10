@@ -1,7 +1,11 @@
-
 {
     "ip":{
-        "auth":"http://149.165.170.252:7998"
+        "auth":"http://149.165.170.252:7999",
+        "getrides":"http://149.165.168.54:8082",
+        "updateride":"http://149.165.168.54:8082",
+        "email":"http://149.165.157.145:3000",
+        "getrequests":"http://149.165.169.83:8082",
+        "updaterequets":"http://149.165.169.83:8082"
     },
     "server":{
       "auth":{
@@ -9,8 +13,24 @@
         "login":"/login"
       },
       "email":{
-
-      }  
+        "sendmail":"/send"
+      },
+     "getride":{
+        "availablerides":"/offering"
+      },
+      "updateride":{
+          "bookride":"/confirm",
+          "add":"/offering",
+          "request":"/offering"
+      },
+      "getrequest":{
+         "requetederides":"/request"
+       },
+       "updaterequest":{
+           "bookride":"/confirm",
+           "add":"/request",
+           "request":"/offering"
+       }  
     },
     "client":{
         
