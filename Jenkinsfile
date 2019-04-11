@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('install dependencies') {
             steps {
-                sh 'sudo apt-get install nodejs-legacy'
-                sh 'sudo apt-get install npm'
+                    sh 'sudo apt install nodejs'
+		    sh 'sudo apt install npm'
             }
         }
         stage('build API for test purpose') {
