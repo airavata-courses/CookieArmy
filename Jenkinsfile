@@ -12,6 +12,7 @@ pipeline {
 			dir("API"){
             sh 'pwd'
 		    sh 'hostname'
+				sh 'id'
             sh 'ls -lrth'
 		     sh 'npm install'
             }
