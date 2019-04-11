@@ -28,13 +28,15 @@ pipeline {
     }
 	stage('Build Image') {
             steps {
+		    dir("API"){
                 script {
                 	app = docker.build("iarora/api")
                 }
             }
-        }
+	    }}
 	     stage('Push Image') {
             steps {
+		    dir("API"){
                 script {
 			        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 			        	app.push("${BUILD_NUMBER}")
@@ -42,7 +44,7 @@ pipeline {
 			        }
                 }
             }
-        }    
+	    } }   
     
     }
    }
