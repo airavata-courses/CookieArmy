@@ -9,14 +9,16 @@ pipeline {
         }
         stage('build maven') {
             steps {
+			dir("API"){
             sh 'pwd'
 		    sh 'hostname'
             sh 'ls -lrth'
 		    sh 'mvn clean package'
             }
-        }
+        }}
 		   stage('build Docker Image') {
             steps {
+			dir("serviceRegistry"){
             sh 'pwd'
 		    sh ' sudo docker build -t iarora/api:latest .'
 			
@@ -28,5 +30,5 @@ pipeline {
 			sh 'chmod 777 docker-compose.yml'
             }
         }
-    }
+    }}
 }
