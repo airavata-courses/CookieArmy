@@ -30,6 +30,7 @@ pipeline {
             steps {
 		    dir("API"){
                 script {
+			args '-u root:root'
                 	app = sudo docker.build("iarora/api")
                 }
             }
