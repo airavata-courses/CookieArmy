@@ -25,5 +25,6 @@ pipeline {
 		    sh 'chmod 777 docker-compose.yml'
             }
         }
-    }}
-    }}
+    }
+    }
+    }
