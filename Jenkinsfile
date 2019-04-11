@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent master
     stages {
         stage('install dependencies') {
             steps {
@@ -18,7 +18,7 @@ pipeline {
         }}
 		   stage('build Docker Image') {
             steps {
-			dir("serviceRegistry"){
+			dir("API"){
             sh 'pwd'
 		    sh ' sudo docker build -t iarora/api:latest .'
 			
