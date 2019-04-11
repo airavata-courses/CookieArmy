@@ -33,6 +33,7 @@ pipeline {
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             sh 'sudo docker push iarora/api:latest'
-	}}
+	}
+	    }
     }
     }
