@@ -30,7 +30,7 @@ pipeline {
             steps {
 		    dir("API"){
                 script {
-                	app = docker.build("iarora/api")
+                	app = sudo docker.build("iarora/api")
                 }
             }
 	    }}
@@ -39,8 +39,8 @@ pipeline {
 		    dir("API"){
                 script {
 			        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-			        	app.push("${BUILD_NUMBER}")
-			            app.push("latest")
+			        	sudo app.push("${BUILD_NUMBER}")
+			            sudo app.push("latest")
 			        }
                 }
             }
