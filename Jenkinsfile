@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('install dependencies') {
             steps {
-                sh 'sudo apt-get install maven -y'
-		            sh 'mvn --version'
+                sh 'sudo apt-get install nodejs-legacy'
+                sh 'sudo apt-get install npm'
             }
         }
-        stage('build maven') {
+        stage('build API for test purpose') {
             steps {
 			dir("API"){
             sh 'pwd'
 		    sh 'hostname'
             sh 'ls -lrth'
-		    sh 'mvn clean package'
+		     sh 'npm install'
             }
         }}
 		   stage('build Docker Image') {
