@@ -26,11 +26,23 @@ pipeline {
             }
         }
     }
-	    stage('Push image') {
-        
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            sh 'sudo docker push iarora/api:latest'
-	}
-	    }
+	stage('Build Image') {
+            steps {
+                script {
+                	app = docker.build("iarora/api")
+                }
+            }
+        }
+	     stage('Push Image') {
+            steps {
+                script {
+			        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+			        	app.push("${BUILD_NUMBER}")
+			            app.push("latest")
+			        }
+                }
+            }
+        }    
+    
     }
-    }
+   }
