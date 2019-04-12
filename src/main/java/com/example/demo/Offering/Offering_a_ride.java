@@ -3,112 +3,62 @@ package com.example.demo.Offering;
 public class Offering_a_ride {
 	
 	private String date;
-	private String rideid;
+	private String rideId;
 	private String name;
-	private String source;
-	private String destination;
+	private String from;
+	private String to;
 	private String time;
-	private String amount;
-	
-	
-//	private String contact_details;
-//	private String passenger1;
-//	private String passenger2;
-//	private String passenger3;
-	
-	public String getName() {
-		return name;
+	private String price;
+	private String image;
+	public String getImage() {
+		return image;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setImage(String image) {
+		this.image = image;
 	}
-	
-	
 	public String getDate() {
 		return date;
 	}
 	public void setDate(String date) {
 		this.date = date;
 	}
-	/*
-	public String getContact_details() {
-		return contact_details;
+	public String getRideId() {
+		return rideId;
 	}
-	public void setContact_details(String contact_details) {
-		this.contact_details = contact_details;
+	public void setRideId(String rideId) {
+		this.rideId = rideId;
 	}
-	
-	public String getPassenger1() {
-		return passenger1;
+	public String getName() {
+		return name;
 	}
-	public void setPassenger1(String passenger1) {
-		this.passenger1 = passenger1;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	public String getPassenger2() {
-		return passenger2;
+	public String getFrom() {
+		return from;
 	}
-	public void setPassenger2(String passenger2) {
-		this.passenger2 = passenger2;
+	public void setFrom(String from) {
+		this.from = from;
 	}
-	
-	public String getPassenger3() {
-		return passenger3;
+	public String getTo() {
+		return to;
 	}
-	public void setPassenger3(String passenger3) {
-		this.passenger3 = passenger3;
+	public void setTo(String to) {
+		this.to = to;
 	}
-	*/
-	public String getRideid() {
-		return rideid;
-	}
-	public void setRideid(String rideid) {
-		this.rideid = rideid;
-	}
-	
 	public String getTime() {
 		return time;
 	}
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public String getAmount() {
-		return amount;
+	public String getPrice() {
+		return price;
 	}
-	public void setAmount(String amount) {
-		this.amount = amount;
-	}
-	public String getSource() {
-		return source;
-	}
-	public void setSource(String source) {
-		this.source = source;
-	}
-	public String getDestination() {
-		return destination;
-	}
-	public void setDestination(String destination) {
-		this.destination = destination;
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	
+	
+	
 }
-
-
-
-
-//to
-//from
-//date
-//contact details
-
-
-//NEW-->
-//NAME
-//CONTACT DETAILS
-//FROM
-//TO
-//DATE
-//PASSENGER1
-//PASSENGER3
-//PASSENGER2
-
