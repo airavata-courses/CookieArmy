@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'master' }
     stages {
         stage('install dependencies') {
             steps {
@@ -47,7 +47,12 @@ pipeline {
 			        }
                 }
             }
-	    } }   
-    
+	    } }  
+    }
+	post {
+        success{
+		sh 'sudo su - ubuntu -c "scp  /home/ubuntu/sga/jenkins/authentication/workspace/APIGateway/API ubuntu@149.165.157.145:/tmp" '
+		sh 'sudo su - ubuntu -c " ssh ubuntu@149.165.157.145 sudo docker stack deploy -c /tmp/docker-compose.yml DB_request_ride" '
+		}
     }
    }
