@@ -60,6 +60,7 @@ public class Offering_a_ride_DAOIMPL implements Offering_a_ride_DAO {
 			o.setDestination((String) row.get("Destination"));
 			o.setAmount((String) row.get("amount"));
 			o.setTime((String) row.get("time"));
+			o.setImage("https://kcl-mrcdtp.com/wp-content/uploads/sites/201/2017/05/person_icongray-300x300.png");
 			return o;
 		}).forEach((ss) -> {
 			offer_a_ride_list.add(ss);
