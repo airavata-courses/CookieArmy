@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Rides</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+        <ion-button routerLink="/rides/tabs/add-ride" *ngIf="isAuthenticated" >
+          <ion-icon name="add" slot="icon-only"></ion-icon>
+        </ion-button>
+    
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+        <ion-list>
+          <ion-item *ngFor="let ride of rides;let i=index;" [routerLink]="['/','rides','tabs','rides-available',ride.rideId]">
+              <ion-avatar slot="start">
+                  <ion-img [src]="ride.image"></ion-img>
+              </ion-avatar>
+              <ion-label>
+
+                  <p>{{ride.date }}</p>
+                <h2>{{ride.from}} - {{ride.to}}</h2>
+                
+              </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+
+</ion-content>
