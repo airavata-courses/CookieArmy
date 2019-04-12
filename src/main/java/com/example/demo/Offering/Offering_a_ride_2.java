@@ -7,9 +7,9 @@ public class Offering_a_ride_2 {
 	private String name;
 	private String source;
 	private String destination;
-	private String contact_details;
+	private String email;
 	private String time;
-	private String amount;
+	private String price;
 	private String passenger1;
 	public String getTime() {
 		return time;
@@ -18,10 +18,10 @@ public class Offering_a_ride_2 {
 		this.time = time;
 	}
 	public String getAmount() {
-		return amount;
+		return price;
 	}
 	public void setAmount(String amount) {
-		this.amount = amount;
+		this.price = amount;
 	}
 	private String passenger2;
 	private String passenger3;
@@ -56,10 +56,10 @@ public class Offering_a_ride_2 {
 	}
 
 	public String getContact_details() {
-		return contact_details;
+		return email;
 	}
 	public void setContact_details(String contact_details) {
-		this.contact_details = contact_details;
+		this.email = contact_details;
 	}
 	
 	public String getPassenger1() {
@@ -111,6 +111,4 @@ public class Offering_a_ride_2 {
 //PASSENGER1
 //PASSENGER3
 //PASSENGER2
-//testcommit
-//testcommit2
 
