@@ -40,8 +40,8 @@ pipeline {
 	
 	 post {
         success{
-		sh 'sudo su - ubuntu -c "scp /var/lib/jenkins/workspace/Second_DB_Service/docker-compose.yml ubuntu@149.165.157.145:/tmp" '
-		sh 'sudo su - ubuntu -c " ssh ubuntu@149.165.157.145 sudo docker stack deploy -c /tmp/docker-compose.yml DB_request_ride" '
+		sh 'sudo su - ubuntu -c "scp /var/lib/jenkins/workspace/Second_DB_Service/docker-compose.yml ubuntu@149.165.156.229:/tmp" '
+		sh 'sudo su - ubuntu -c " ssh ubuntu@149.165.156.229 sudo docker stack deploy -c /tmp/docker-compose.yml DB_request_ride" '
 	        
 			
 		}
