@@ -43,6 +43,15 @@ pipeline {
             }
 	    } }  
     }
+post {
+        success{
+		
 
+sh 'ssh ubuntu@149.165.171.155 sudo docker service dboffering '
+sh 'ssh ubuntu@149.165.171.155 sudo docker service create --name dboffering -p 8082:8082 iarora/db_1:latest --replicas 3'
+sh 'ssh ubuntu@149.165.171.155 sudo docker service update dboffering --replicas=3'		
+			
+		}
+    }
 			
     }
