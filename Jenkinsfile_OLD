@@ -28,8 +28,8 @@ pipeline {
 					sh 'sudo docker build -f DockerfileS -t iarora/springdb . '
 					sh 'sudo apt --assume-yes install gnupg2 pass;'
 					sh 'sudo docker push iarora/springdb:latest'
-					sh 'sudo docker service create --name db_spring -p 8082:8082  iarora/springdb:latest'
-					sh 'sudo docker service update db_spring --replicas=3'
+					sh 'sudo docker service create --name dboffering -p 8082:8082 iarora/db_1:latest'
+					sh 'sudo docker service update dboffering --replicas=3'
                     
                 }
             }
