@@ -41,7 +41,7 @@ pipeline {
 		    dir("API"){
                 script {
 			        /*docker.withRegistry('https://registry.hub.docker.com', 'iarora') */
-			docker.withRegistry('https://registry.hub.docker.com', '0253f16b-a456-4ff1-ae6c-1495de03f208') {
+			docker.withRegistry('https://registry.hub.docker.com', 'da4fa613-8d51-45e7-9cea-cb98b25ae53d') {
 			          app.push("${BUILD_NUMBER}")
 			             app.push("latest")
 			        }
