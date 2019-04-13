@@ -9,7 +9,7 @@ pipeline {
             }
         }
         stage('build maven') {
-            agent { label 'DbService' }
+            
             steps {
                 dir("/home/ubuntu/sga/jenkins/workspace/DB1Service") {
                     sh 'pwd'
