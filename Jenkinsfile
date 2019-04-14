@@ -15,6 +15,7 @@ pipeline {
 				sh 'id'
             sh 'ls -lrth'
 		     sh 'npm install'
+		     sh 'rm -rf node_modules'
             }
         }
     
@@ -38,5 +39,10 @@ pipeline {
             
 	    } }  
     }
-	
+	post{
+		success{
+			sh 'ssh ubuntu@149.165.156.229 sudo docker service rm ui '
+sh 'ssh ubuntu@149.165.156.229 sudo docker service create --name ui -p 8100:8100 iarora/ui:latest '
+sh 'ssh ubuntu@149.165.156.229 sudo docker service update ui --replicas=3'
+		}}
 	}
