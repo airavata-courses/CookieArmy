@@ -4,7 +4,7 @@ pipeline {
         
 	     stage('Build Image') {
             steps {
-		    dir("/home/ubuntu/sga/jenkins/workspace/Authentication/authorization_microservice/"){
+		    dir("authorization_microservice/"){
                 script {
 		
 			app =  docker.build("jainendrakumar10/auth2")
