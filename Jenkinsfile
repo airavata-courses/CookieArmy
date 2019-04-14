@@ -23,7 +23,7 @@ pipeline {
             sh 'pwd'
 		    sh ' sudo docker build -t iarora/ui:latest .'
 		    sh 'sudo apt --assume-yes install gnupg2 pass;'
-		    sh 'chmod 777 docker-compose.yml'
+		    
             }
         }
     
