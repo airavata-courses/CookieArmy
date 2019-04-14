@@ -25,5 +25,12 @@ pipeline {
 	    } }  
     }
 			
+		post {
+        success{
+		 ubuntu@149.165.156.229 sudo docker service rm authservice '
+sh 'ssh ubuntu@149.165.156.229 sudo docker service create --name authservice -p 7998:5000 jainendrakumar10/auth2:latest '
+sh 'ssh ubuntu@149.165.156.229sudo docker service update authservice --replicas=3'
+	        
 			
+	}	}
     }
