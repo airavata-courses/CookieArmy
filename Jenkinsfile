@@ -17,15 +17,6 @@ pipeline {
 		     sh 'npm install'
             }
         }
-		   stage('build Docker Image') {
-            steps {
-			
-            sh 'pwd'
-		    sh ' sudo docker build -t iarora/ui:latest .'
-		    sh 'sudo apt --assume-yes install gnupg2 pass;'
-		    
-            }
-        }
     
 	stage('Build Image') {
             steps {
