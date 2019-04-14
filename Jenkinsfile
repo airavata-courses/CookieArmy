@@ -7,17 +7,6 @@ pipeline {
 		    sh 'sudo apt install npm'
             }
         }
-        stage('build API for test purpose') {
-            steps {
-			
-            sh 'pwd'
-		    sh 'hostname'
-				sh 'id'
-            sh 'ls -lrth'
-		     sh 'npm install'
-		     sh 'rm -rf node_modules'
-            }
-        }
     
 	stage('Build Image') {
             steps {
