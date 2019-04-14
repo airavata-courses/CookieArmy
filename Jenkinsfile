@@ -7,7 +7,7 @@ pipeline {
 		    dir("authorization_microservice/"){
                 script {
 		
-			app =  docker.build("jainendrakumar10/auth2")
+			app =  docker.build("iarora/auth2")
                 }
             }
 	    }}
