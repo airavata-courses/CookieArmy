@@ -11,11 +11,12 @@ pipeline {
         stage('build maven') {
             
             steps {
-                dir("/home/ubuntu/sga/jenkins/workspace/DB1Service") {
+                dir("/home/ubuntu/jenkins/workspace/DB1Service") {
                     sh 'pwd'
 		    sh 'hostname'
                     sh 'ls -lrth'
 		    sh 'mvn clean package'
+		    sh ' rm -rf target'
                     
                 }
             }
@@ -23,7 +24,7 @@ pipeline {
 		
 	     stage('Build Image') {
             steps {
-		    dir("/home/ubuntu/sga/jenkins/workspace/DB1Service"){
+		    dir("/home/ubuntu/jenkins/workspace/DB1Service"){
                 script {
 		
 			app =  docker.build("iarora/dboffering")
@@ -47,9 +48,9 @@ post {
         success{
 		
 
-sh 'ssh ubuntu@149.165.171.155 sudo docker service rm dboffering '
-sh 'ssh ubuntu@149.165.171.155 sudo docker service create --name dboffering -p 8082:8082 iarora/db_1:latest --replicas 3'
-sh 'ssh ubuntu@149.165.171.155 sudo docker service update dboffering --replicas=3'		
+
+sh 'ssh ubuntu@149.165.171.121 sudo docker service create --name dboffering -p 8082:8082 iarora/db_1:latest '
+sh 'ssh ubuntu@149.165.171.121 sudo docker service update dboffering --replicas=3'		
 			
 		}
     }
