@@ -41,7 +41,7 @@ pipeline {
             }
 	    } }  
     }
-	
+	}
 	 post {
         success{
 		sh 'sudo su - ubuntu -c "scp /home/ubuntu/jenkins/workspace/DB2Service/docker-compose.yml ubuntu@149.165.171.121:/tmp" '
