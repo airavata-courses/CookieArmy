@@ -51,8 +51,9 @@ pipeline {
     }
 	post {
         success{
-		sh 'scp  /home/ubuntu/sga/jenkins/workspace/APIGateway/API/docker-compose.yml ubuntu@149.165.171.155:/tmp'
-sh 'ssh ubuntu@149.165.171.155 sudo docker stack deploy -c /tmp/docker-compose.yml APIgateway'
+sh ' cp /home/ubuntu/jenkins/workspace/APIGateway/API/docker-compose.yml /home/ubuntu/jenkins/workspace/APIGateway/API/docker-compose-API.yml
+sh 'scp  /home/ubuntu/jenkins/workspace/APIGateway/API/docker-compose-API.yml ubuntu@149.165.171.121:/tmp'
+sh 'ssh ubuntu@149.165.171.121 sudo docker stack deploy -c /tmp/docker-compose-API.yml APIgateway'
 
 		}
     }
