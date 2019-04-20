@@ -6,7 +6,7 @@ services:
                    context: .
                    dockerfile: Dockerfile
               ports:
-                   - 8082:8082
+                   - 8083:8082
               image:
                   iarora/dbservice3_spring:latest
               volumes:
