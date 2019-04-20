@@ -19,23 +19,27 @@ pipeline {
 		    sh 'mvn clean package'
                 
             }
-        }
-		   stage('build Docker Image') {
-           
+    stage('Build Image') {
             steps {
-               
-            sh 'pwd'
-		    
-		    
-		    sh ' sudo docker build -t iarora/dbservice3_spring:latest .'
-		    sh 'chmod 777 docker-compose.yml'
-		    
-          
-		    
-                
+		    dir("/home/ubuntu/jenkins/workspace/DB1Service"){
+                script {
+		
+			app =  docker.build("iarora/dbservice3_spring")
+                }
             }
-        }
-			
+	    }}
+	     stage('Push Image') {
+            steps {
+		    dir("/home/ubuntu/sga/jenkins/workspace/DB1Service"){
+                script {
+			        /*docker.withRegistry('https://registry.hub.docker.com', 'iarora') */
+			docker.withRegistry('https://registry.hub.docker.com', 'da4fa613-8d51-45e7-9cea-cb98b25ae53d') {
+			          app.push("${BUILD_NUMBER}")
+			             app.push("latest")
+			        }
+                }
+            }
+	    } }  
     }
 	
 	 post {
