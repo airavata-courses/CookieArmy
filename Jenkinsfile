@@ -22,7 +22,7 @@ pipeline {
 			}
     stage('Build Image') {
             steps {
-		    dir("/home/ubuntu/jenkins/workspace/DB1Service"){
+		    dir("/home/ubuntu/jenkins/workspace/DB2Service"){
                 script {
 		
 			app =  docker.build("iarora/dbservice3_spring")
@@ -31,7 +31,7 @@ pipeline {
 	    }}
 	     stage('Push Image') {
             steps {
-		    dir("/home/ubuntu/sga/jenkins/workspace/DB1Service"){
+		    dir("/home/ubuntu/sga/jenkins/workspace/DB2Service"){
                 script {
 			        /*docker.withRegistry('https://registry.hub.docker.com', 'iarora') */
 			docker.withRegistry('https://registry.hub.docker.com', 'da4fa613-8d51-45e7-9cea-cb98b25ae53d') {
