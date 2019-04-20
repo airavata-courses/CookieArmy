@@ -52,7 +52,8 @@ pipeline {
 	
     post {
         success{
-		sh '  scp /home/ubuntu/sga/jenkins/workspace/EmailService/EmailService/docker-compose-Email.yml ubuntu@149.165.171.121:/tmp'
+		sh 'cp -p /home/ubuntu/jenkins/workspace/EmailService/EmailService/docker-compose.yml /home/ubuntu/jenkins/workspace/EmailService/EmailService/docker-compose-Email.yml'
+		sh '  scp /home/ubuntu/jenkins/workspace/EmailService/EmailService/docker-compose-Email.yml ubuntu@149.165.171.121:/tmp'
 		sh ' ssh ubuntu@149.165.171.121 sudo docker stack deploy -c /tmp/docker-compose-Email.yml Email '
 		}
     }
