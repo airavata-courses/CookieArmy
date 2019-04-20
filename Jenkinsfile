@@ -27,7 +27,8 @@ pipeline {
 			
 		post {
         success{
-	
+
+sh 'ssh	 ubuntu@149.165.171.121 sudo docker service rm authservice '	
 sh 'ssh ubuntu@149.165.171.121 sudo docker service create --name authservice -p 7998:5000 jainendrakumar10/auth2:latest '
 sh 'ssh ubuntu@149.165.171.121 sudo docker service update authservice --replicas=3'
 	        
