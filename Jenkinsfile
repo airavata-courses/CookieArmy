@@ -19,6 +19,7 @@ pipeline {
 		    sh 'mvn clean package'
                 
             }
+			}
     stage('Build Image') {
             steps {
 		    dir("/home/ubuntu/jenkins/workspace/DB1Service"){
@@ -39,9 +40,10 @@ pipeline {
 			        }
                 }
             }
-	    } }  
+	    } 
+		}  
     }
-	}
+	
 	 post {
         success{
 		sh 'sudo su - ubuntu -c "scp /home/ubuntu/jenkins/workspace/DB2Service/docker-compose.yml ubuntu@149.165.171.121:/tmp" '
