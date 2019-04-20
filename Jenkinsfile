@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('install dependencies') {
             steps {
-                    sh 'sudo apt install nodejs'
-		    sh 'sudo apt install npm'
+                    sh 'sudo apt install nodejs -y'
+		    sh 'sudo apt install npm -y'
             }
         }
         stage('build API for test purpose') {
