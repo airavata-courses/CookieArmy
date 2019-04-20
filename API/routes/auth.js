@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const cache = require("./cache.json");
 
-const ip='http://149.165.170.252:7998';
+const ip='http://149.165.171.121:7999';
 
 router.get('/',(req,res)=>{
 
