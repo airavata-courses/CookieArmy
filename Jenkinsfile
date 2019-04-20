@@ -16,7 +16,7 @@ pipeline {
 		    sh 'hostname'
                     sh 'ls -lrth'
 		    sh 'mvn clean package'
-		    sh ' rm -rf target'
+		    
                     
                 }
             }
