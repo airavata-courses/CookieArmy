@@ -27,7 +27,7 @@ const NAME = 'auth-name';
 })
 export class AuthService {
 
-  private ip:string='149.165.171.121:5000';
+  private ip:string='129.114.104.73:5000';
   authenticationState = new BehaviorSubject(false);
 
  private email:string;
