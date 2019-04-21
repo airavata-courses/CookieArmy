@@ -32,7 +32,7 @@ pipeline {
 		    dir("API"){
                 script {
 		
-			app =  docker.build("iarora/api")
+			app =  docker.build("iarora/api-tacc")
                 }
             }
 	    }}
