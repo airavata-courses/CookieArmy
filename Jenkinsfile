@@ -25,7 +25,7 @@ pipeline {
 		    dir("/home/ubuntu/jenkins/workspace/DB2Service"){
                 script {
 		
-			app =  docker.build("iarora/dbservice3_spring")
+			app =  docker.build("iarora/dbservice3_spring-tacc")
                 }
             }
 	    }}
