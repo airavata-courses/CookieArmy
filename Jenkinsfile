@@ -46,9 +46,9 @@ pipeline {
 	
 	 post {
         success{
-		sh 'sudo su - ubuntu -c "scp /home/ubuntu/jenkins/workspace/DB2Service/docker-compose.yml ubuntu@149.165.171.121:/tmp" '
+		sh 'sudo su - ubuntu -c "scp /home/ubuntu/jenkins/workspace/DB2Service/docker-compose.yml ubuntu@129.114.104.73:/tmp" '
 		
-		sh 'ssh ubuntu@149.165.171.121 sudo docker stack deploy -c /tmp/docker-compose.yml Db2 '
+		sh 'ssh ubuntu@129.114.104.73 sudo docker stack deploy -c /tmp/docker-compose.yml Db2 '
 			
 		}
     }
