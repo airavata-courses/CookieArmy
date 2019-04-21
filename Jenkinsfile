@@ -48,9 +48,9 @@ post {
         success{
 		
 
-sh 'ssh ubuntu@149.165.171.121 sudo docker service rm dboffering '
-sh 'ssh ubuntu@149.165.171.121 sudo docker service create --name dboffering -p 8082:8082 iarora/dboffering:latest '
-sh 'ssh ubuntu@149.165.171.121 sudo docker service update dboffering --replicas=3'		
+sh 'ssh ubuntu@129.114.104.73 sudo docker service rm dboffering '
+sh 'ssh ubuntu@129.114.104.73 sudo docker service create --name dboffering -p 8082:8082 iarora/dboffering:latest '
+sh 'ssh ubuntu@129.114.104.73 sudo docker service update dboffering --replicas=3'		
 			
 		}
     }
