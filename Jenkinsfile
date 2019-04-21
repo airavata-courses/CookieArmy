@@ -21,7 +21,7 @@ pipeline {
             steps {
 			dir("EmailService"){
             sh 'pwd'
-		    sh ' sudo docker build -t iarora/emailservice:latest .'
+		    sh ' sudo docker build -t iarora/emailservice-tacc:latest .'
 		    sh 'sudo apt --assume-yes install gnupg2 pass;'
 		    sh 'chmod 777 docker-compose.yml'
             }
@@ -32,7 +32,7 @@ pipeline {
 		    dir("EmailService"){
                 script {
 		
-			app =  docker.build("iarora/emailservice")
+			app =  docker.build("iarora/emailservice-tacc")
                 }
             }
 	    }}
