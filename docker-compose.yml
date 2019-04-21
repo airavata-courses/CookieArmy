@@ -8,7 +8,7 @@ services:
               ports:
                    - 8083:8082
               image:
-                  iarora/dbservice3_spring:latest
+                  iarora/dbservice3_spring-tacc:latest
               volumes:
                    - /data/spring-boot-app
               deploy:
