@@ -34,7 +34,7 @@ new Ride('3','megan','Bangalore','X','05.10','Dec 31','https://media1.popsugar-a
   10,'a@x.com')
 ];
 
-private ip:string='149.165.171.121:5000';
+private ip:string='129.114.104.73:5000';
   constructor(private authService:AuthService,private alertController:AlertController) { }
 
   getRides(){
