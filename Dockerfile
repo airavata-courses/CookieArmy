@@ -1,11 +1,11 @@
 
 FROM node:alpine
 
-COPY . /www/app
-
 RUN npm install -g cordova ionic
 RUN npm install -g bower
 RUN npm install -g gulp
+
+COPY . /www/app
 
 WORKDIR /www/app
 RUN npm install
