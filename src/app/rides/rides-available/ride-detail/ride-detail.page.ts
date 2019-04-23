@@ -51,6 +51,7 @@ export class RideDetailPage implements OnInit {
             }).then(
               (load)=>{
                 load.present();
+                 this.rideService.sendMail();
                 setTimeout(()=>{
                   this.isLoading=false;
                   load.dismiss();
