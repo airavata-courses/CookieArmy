@@ -12,7 +12,7 @@ pipeline {
             steps {
 		    
                 script {
-			app =  docker.build("iarora/ui-tacc")
+			app =  docker.build("iarora/ui-tacc-v2")
                 }
         }}
 	     stage('Push Image') {
