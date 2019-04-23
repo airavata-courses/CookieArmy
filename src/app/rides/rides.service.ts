@@ -172,7 +172,7 @@ private ip:string='129.114.104.73:5000';
     }
       )
   }
-  async sendMail(ride:Ride){
+  async sendMail(){
     console.log('tried')
     let name=this.authService.getName();
     let email=this.authService.getEmail();
