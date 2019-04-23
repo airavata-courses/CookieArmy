@@ -16,7 +16,5 @@ RUN npm install
 COPY  . .
 EXPOSE 3000
 
-HEALTHCHECK --interval=35s --timeout=3s --start-period=3m --retries=3 \ 
-  CMD curl -fs http://localhost:3000/ || exit 1
 
 CMD [ "node", "app.js" ]
