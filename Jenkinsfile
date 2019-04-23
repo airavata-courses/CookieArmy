@@ -30,8 +30,9 @@ pipeline {
     }
 	post{
 		success{
-			sh 'ssh ubuntu@129.114.16.139 sudo docker service rm ui '
+			/*sh 'ssh ubuntu@129.114.16.139 sudo docker service rm ui '
 sh 'ssh ubuntu@129.114.16.139 sudo docker service create --name ui -p 8100:8100 iarora/ui-tacc:latest '
-sh 'ssh ubuntu@129.114.16.139 sudo docker service update ui --replicas=3'
+sh 'ssh ubuntu@129.114.16.139 sudo docker service update ui --replicas=3'*/
+			sh 'ssh ubuntu@129.114.16.139 sudo docker service update --image iarora/ui-tacc:latest ui --replicas=3'
 		}}
 	}
