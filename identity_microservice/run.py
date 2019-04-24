@@ -1,31 +1,20 @@
-from flask import Flask
-from flask_restful import Api
-from flask_cors import CORS, cross_origin
-from flask_sqlalchemy import SQLAlchemy
-from flask_jwt_extended import JWTManager
+import functools
+import json
+import os
 
-app=Flask(__name__)
-CORS(app)
+import flask
 
-api = Api(app)
+from authlib.client import OAuth2Session
+import google.oauth2.credentials
+import googleapiclient.discovery
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///carpoolusers.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'my-secret-string'
+import resources
 
-db = SQLAlchemy(app)
+app = flask.Flask(__name__)
+app.secret_key = os.environ.get("FN_FLASK_SECRET_KEY", default=False)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+app.register_blueprint(resources.app)
 
-app.config['JWT_SECRET_KEY'] = 'jwt-secret-string'
-jwt = JWTManager(app)
+import views
 
-import views, models, resources
-
-api.add_resource(resources.UserRegistration, '/registration')
-api.add_resource(resources.UserLogin, '/login')
-
-from flask.ext.openid import OpenID
-oid = OpenID(app, '/openid/session', safe_roots=[])
+# adapted from https://www.mattbutton.com/2019/01/05/google-authentication-with-python-and-flask/
