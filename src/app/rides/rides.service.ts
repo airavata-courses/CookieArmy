@@ -12,9 +12,9 @@ import { AlertButton } from '@ionic/core';
 })
 export class RidesService {
 
-  private _rides:Ride[] = [];
+  private _rides:Ride[];
 
-private requested_rides:Ride[] = [];
+private requested_rides:Ride[];
 
 private ip:string='149.165.171.121:5000';
   constructor(private authService:AuthService,private alertController:AlertController) { }
