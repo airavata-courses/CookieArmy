@@ -104,9 +104,16 @@ export class LoginPage implements OnInit {
       const provider = new firebase.auth.GoogleAuthProvider();
       console.log(provider)
       const credential = await this.afAuth.auth.signInWithPopup(provider);
-      const email=credential.additionalUserInfo.profile.email;
-      const name=credential.additionalUserInfo.profile.name;
-      const token=credential.credential.idToken;
+      const email=firebase.auth().currentUser.email;
+      const name=firebase.auth().currentUser.displayName;
+      const token=firebase.auth().currentUser.refreshToken;
+      const c=credential.credential;
+      console.log(c)
+      console.log(firebase.auth().currentUser.displayName)
+      console.log(firebase.auth().currentUser.email)
+      console.log(firebase.auth().currentUser.refreshToken)
+      
+      
       this.authService.userloggedin(email,name,token);
       console.log(credential)
       this.router.navigateByUrl('/rides/tabs/rides-available');
