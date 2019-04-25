@@ -7,7 +7,6 @@ import { AuthService } from './auth/auth.service';
 import { RidesService } from './rides/rides.service';
 
 import * as firebase from 'firebase/app';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-root',
