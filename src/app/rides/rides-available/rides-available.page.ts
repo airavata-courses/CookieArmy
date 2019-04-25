@@ -42,6 +42,10 @@ export class RidesAvailablePage implements OnInit {
     });
   }
 
+  ionViewWillEnter(){
+    console.log('ion updated');
+    this.rides=this.rideService.getRides();
+  }
   ngOnInit() {
     this.rides=this.rideService.getRides();
   }
