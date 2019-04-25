@@ -1,0 +1,44 @@
+<ion-app>
+  <ion-menu side="start" menuId="m1">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Paie
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list  lines="none">
+        <ion-menu-toggle menu="m1">
+        
+        <ion-item routerLink="/new-user" *ngIf="!isAuthenticated">
+          <ion-icon name="person-add" slot="start" ></ion-icon>
+          <ion-label>New User</ion-label>
+        </ion-item>
+        <ion-item routerLink="/login" *ngIf="!isAuthenticated">
+            <ion-icon name="log-in" slot="start" ></ion-icon>
+            <ion-label>Log In</ion-label>
+        </ion-item>
+        <ion-item (click)="logout()" routerLink="" *ngIf="isAuthenticated">
+              <ion-icon name="log-out" slot="start" ></ion-icon>
+              <ion-label>Log Out</ion-label>
+        </ion-item>
+        <ion-item *ngIf="isAuthenticated1">
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>Details</ion-label>
+        </ion-item>
+        <ion-item *ngIf="isAuthenticated1">
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Booking History</ion-label>
+          </ion-item>
+        <ion-item>
+          <ion-icon name="business" slot="start" routerLink="/about"></ion-icon>
+          <ion-label>About</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list> 
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>
