@@ -30,8 +30,10 @@ pipeline {
     }
 	post{
 		success{
-			sh 'ssh ubuntu@149.165.171.121 sudo docker service rm ui '
-sh 'ssh ubuntu@149.165.171.121 sudo docker service create --name ui -p 8100:8100 iarora/ui:latest '
+			/*sh 'ssh ubuntu@149.165.171.121 sudo docker service rm ui '
+sh 'ssh ubuntu@149.165.171.121 sudo docker service create --name ui -p 8100:8100 iarora/ui:latest '*/
+			
+		sh 'sudo docker service update --image iarora/iu-blue ui-blue'
 
 /*sh 'ssh ubuntu@149.165.171.121 sudo docker service update --image iarora/ui:latest ui --replicas=3'*/
 		}}
