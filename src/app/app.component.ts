@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './auth/auth.service';
 import { RidesService } from './rides/rides.service';
 
+import * as firebase from 'firebase/app';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -22,7 +24,25 @@ export class AppComponent {
   }
   isAuthenticated:boolean=false;
   initializeApp() {
-    this.platform.ready().then(() => {
+      var config = {
+        apiKey: "AIzaSyDg269XE3BRoMDSuvVJj6xlRJCLFqbLJVo",
+        authDomain: "auth-770bb.firebaseapp.com",
+        databaseURL: "https://auth-770bb.firebaseio.com",
+        projectId: "auth-770bb",
+        storageBucket: "auth-770bb.appspot.com",
+        messagingSenderId: "988215790476"
+      };
+      firebase.initializeApp(config);
+      firebase.auth().onAuthStateChanged(user=>{
+        if(user){
+          
+          //this.authService.already();
+          this.authService.userloggedin(user.email,user.displayName,user.refreshToken);
+          console.log(user);
+          console.log('gattu');
+        }
+      })
+      this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.rideService.getavailableRides();
@@ -43,6 +63,6 @@ export class AppComponent {
   }
   logout(){
     console.log('done')
-    this.authService.logout();
+    this.authService.firebaseLogout();
   }
 }

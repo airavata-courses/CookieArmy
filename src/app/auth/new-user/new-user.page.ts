@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  NgForm, Validators, FormArray } from '@angular/forms';
-import { NavController, LoadingController } from '@ionic/angular';
+import { NavController, LoadingController, AlertController } from '@ionic/angular';
 import { Route, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -17,7 +17,7 @@ export class NewUserPage implements OnInit {
 
   constructor(private authService:AuthService,
               private router:Router,
-              private loadingController:LoadingController) {}
+              private loadingController:LoadingController,private alertController:AlertController) {}
   userForm:NgForm;
   isLoading:boolean
   ngOnInit() {
@@ -45,6 +45,26 @@ export class NewUserPage implements OnInit {
     console.log(this.password);
     //this.router.navigate(['signup']);
     
+  }
+  
+ async  onSignin(){
+    const error = await this.alertController.create({
+      header: 'Signup',
+      //subHeader: 'Subtitle',
+      message: 'password strength weak',
+      buttons: ['OK']
+    });
+    this.authService.firebaseNew(this.email,this.password)
+    .then(data=>{
+      console.log(data);
+      this.authService.userloggedin(this.email,this.password,'token');
+      this.router.navigateByUrl('/rides/tabs/rides-available');
+    })
+    .catch(data=>{
+      error.present();
+      console.log(data);
+    });
+  
   }
 
 }

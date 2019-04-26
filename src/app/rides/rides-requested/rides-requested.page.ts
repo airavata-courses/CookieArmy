@@ -44,4 +44,9 @@ export class RidesRequestedPage implements OnInit {
     this.ridesRequested=this.rideService.getreqRides();
   }
 
+   ionViewWillEnter(){
+    console.log('ion updated');
+    this.ridesRequested=this.rideService.getreqRides();
+  }
+
 }

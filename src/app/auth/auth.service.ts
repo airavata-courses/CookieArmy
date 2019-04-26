@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http'
 import { map } from 'rxjs/operators'
 
 import httpClient from './../infra/http-client';
-
+import  * as firebase from 'firebase/app'
 interface myData{
   access_token:string,
   email:string,
@@ -49,6 +49,27 @@ export class AuthService {
   }
   getName(){
     return this.name;
+  }
+  already(){
+    this.authenticationState.next(true);
+  }
+  userloggedin(email:string,name:string,token:string){
+    this.token=token
+    this.email=email;
+    this.name=name;
+    this.authenticationState.next(true);
+  }
+  firebaseNew(email:string,password:string){
+    return firebase.auth().createUserWithEmailAndPassword(email,password);
+  }
+
+  firebaseLogin(email:string,password:string){
+      return firebase.auth().signInWithEmailAndPassword(email,password);
+  }
+
+  firebaseLogout(){
+    this.authenticationState.next(false);
+      firebase.auth().signOut();
   }
 
   async login(email:string,password:string){
@@ -144,7 +165,6 @@ export class AuthService {
             });
 };
 
-
   logout(){
         this.isauth=false;
         this.email='';
@@ -165,4 +185,5 @@ export class AuthService {
                       .set('content-type','application/json');
   return this.http.post<sign>(this.ip+"/newuser",JSON.stringify(this.user),{headers:headers})
   }
+
 }
