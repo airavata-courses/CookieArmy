@@ -12,7 +12,7 @@ pipeline {
             steps {
 		    
                 script {
-			app =  docker.build("iarora/ui")
+			app =  docker.build("iarora/ui-abc-delete")
                 }
         }}
 	     stage('Push Image') {
