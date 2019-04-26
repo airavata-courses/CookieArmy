@@ -12,7 +12,7 @@ import { AlertButton } from '@ionic/core';
 })
 export class RidesService {
 
-  private _rides:Ride[] = [{
+  private _rides:Ride[] = [/*{
     rideId:'1',from:'Bangalor',to:'Chennai',date:'Jan 1',image:'http://3.bp.blogspot.com/_FeuPKiPt1o4/S6smmvfb4kI/AAAAAAAAAtQ/x_QLB8IzO14/s1600/USA+Top+Hot+Girl+Scarlett+Johansson+Bold.jpg',
     price:10,time:'10.10',name:'Scarlett',email:'a@g.com'
   },{
@@ -21,9 +21,9 @@ export class RidesService {
   },
   new Ride('3','megan','Bangalore','X','05.10','Dec 31','https://media1.popsugar-assets.com/files/thumbor/JAXTYV1y1ayTltzzuA6Gha3m-zM/fit-in/550x550/filters:format_auto-!!-:strip_icc-!!-/2016/05/16/781/n/1922398/acef50d9_edit_img_image_23097206_1445069400_728/i/Megan-Fox-Hottest-Bikini-Pictures.jpg',
     10,'a@b.com')
-];
+*/];
 
-private requested_rides:Ride[] = [{
+private requested_rides:Ride[] = [/*{
   rideId:'1',from:'Bangalor',to:'Chennai',date:'Jan 1',image:'http://3.bp.blogspot.com/_FeuPKiPt1o4/S6smmvfb4kI/AAAAAAAAAtQ/x_QLB8IzO14/s1600/USA+Top+Hot+Girl+Scarlett+Johansson+Bold.jpg',
   price:10,time:'10.10',name:'Scarlett',email:'a@y.com'
 },{
@@ -32,7 +32,7 @@ private requested_rides:Ride[] = [{
 },
 new Ride('3','megan','Bangalore','X','05.10','Dec 31','https://media1.popsugar-assets.com/files/thumbor/JAXTYV1y1ayTltzzuA6Gha3m-zM/fit-in/550x550/filters:format_auto-!!-:strip_icc-!!-/2016/05/16/781/n/1922398/acef50d9_edit_img_image_23097206_1445069400_728/i/Megan-Fox-Hottest-Bikini-Pictures.jpg',
   10,'a@x.com')
-];
+*/];
 
 private ip:string='129.114.104.73:5000';
   constructor(private authService:AuthService,private alertController:AlertController) { }
