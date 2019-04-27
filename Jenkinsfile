@@ -12,7 +12,7 @@ pipeline {
             steps {
 		    
                 script {
-			app =  docker.build("iarora/ui")
+			app =  docker.build("ui-iu-final-blue")
                 }
         }}
 	     stage('Push Image') {
@@ -30,11 +30,12 @@ pipeline {
     }
 	post{
 		success{
-			sh 'ssh ubuntu@149.165.171.121 sudo docker service rm ui '
+			/*sh 'ssh ubuntu@149.165.171.121 sudo dockui-iu-final-blueer service rm ui '*/
 /*sh 'ssh ubuntu@149.165.171.121 sudo docker service create --name ui -p 8100:8100 iarora/ui:latest '*/
 			
 	
 
 /*sh 'ssh ubuntu@149.165.171.121 sudo docker service update --image iarora/ui:latest ui --replicas=3'*/
+			sh 'sudo docker service update --image ui-iu-final-blue:latest ui-blue'
 		}}
 	}
