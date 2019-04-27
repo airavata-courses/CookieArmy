@@ -20,6 +20,15 @@ pipeline {
                 
             }
 			}
+	    stage('Test') {
+           
+            steps {
+               
+            
+		    sh 'mvn test '
+                
+            }
+			}
     stage('Build Image') {
             steps {
 		    dir("/home/ubuntu/jenkins/workspace/DB2Service"){
