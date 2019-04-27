@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { NavController, AlertController, LoadingController } from '@ionic/angular';
 import { Ride } from '../../ride.model';
 import { RidesService } from '../../rides.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-ride-detail',
@@ -12,9 +13,20 @@ import { RidesService } from '../../rides.service';
 export class RideDetailPage implements OnInit {
   ride:Ride
   isLoading:boolean
+  isAuthenticated:boolean=false;
   constructor(private router:Router,private navCtrl:NavController,private activatedRoute:ActivatedRoute,
-    private alertController:AlertController,private rideService:RidesService,private loadingController:LoadingController) { }
-
+    private alertController:AlertController,private rideService:RidesService,private loadingController:LoadingController,private authService:AuthService) {
+      this.authService.authenticationState.subscribe(state=>{
+        console.log('change '+state);
+          if(state){
+            this.isAuthenticated=true;
+          }
+          else{
+            this.isAuthenticated=false;
+          }
+      })
+     }
+    
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap=>{
       if(!paramMap.has('rideId')){
