@@ -51,7 +51,7 @@ export class NewUserPage implements OnInit {
     const error = await this.alertController.create({
       header: 'Signup',
       //subHeader: 'Subtitle',
-      message: 'Couldnt sign u up.',
+      message: 'password strength weak',
       buttons: ['OK']
     });
     this.authService.firebaseNew(this.email,this.password)
