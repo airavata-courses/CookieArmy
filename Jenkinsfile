@@ -21,6 +21,19 @@ pipeline {
                 }
             }
         }
+	    stage('build maven') {
+            
+            steps {
+                dir("/home/ubuntu/jenkins/workspace/DB1Service") {
+                    sh 'pwd'
+		    sh 'hostname'
+                    sh 'ls -lrth'
+		    sh 'mvn test'
+		    
+                    
+                }
+            }
+        }
 		
 	     stage('Build Image') {
             steps {
