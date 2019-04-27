@@ -15,7 +15,7 @@ pipeline {
 			app =  docker.build("ui-iu-final-blue")
                 }
         }}
-	     stage('Push Image') {
+	    stage('Push Image') {
             steps {
 		   
                 script {
