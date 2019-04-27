@@ -27,7 +27,7 @@
                   </ion-row>
                   <ion-row>
                       <ion-col text-right>
-                          <ion-button fill="clear" color="primary" (click)="bookRide()">
+                          <ion-button fill="clear" color="primary" (click)="bookRide()" *ngIf="isAuthenticated">
                             Book
                           </ion-button>
                         </ion-col>
