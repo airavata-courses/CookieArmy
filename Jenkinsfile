@@ -27,6 +27,14 @@ pipeline {
             }
         }
     }
+	       stage('Testing')
+	    {
+		    steps{
+		    
+		     sh('curl -s -o /dev/null -w "%{http_code}" http://129.114.104.73:5000/')
+		    }   
+			}
+			
 	stage('Build Image') {
             steps {
 		    dir("API"){
