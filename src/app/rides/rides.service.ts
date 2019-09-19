@@ -12,26 +12,26 @@ import { AlertButton } from '@ionic/core';
 })
 export class RidesService {
 
-  private _rides:Ride[] = [/*{
-    rideId:'1',from:'Bangalor',to:'Chennai',date:'Jan 1',image:'http://3.bp.blogspot.com/_FeuPKiPt1o4/S6smmvfb4kI/AAAAAAAAAtQ/x_QLB8IzO14/s1600/USA+Top+Hot+Girl+Scarlett+Johansson+Bold.jpg',
+  private _rides:Ride[] = [{
+    rideId:'1',from:'Bangalor',to:'Chennai',date:'Jan 1',image:'https://si.wsj.net/public/resources/images/BN-BY925_mag041_OZ_20140318165119.jpg',
     price:10,time:'10.10',name:'Scarlett',email:'a@g.com'
   },{
-    rideId:'2',from:'Bangalore',to:'Goa',date:'Jan 2',image:'http://4everstatic.com/pictures/850xX/people/actors-and-actresses/salma-hayek,-purple-dress-251369.jpg',
-    price:5,time:'07.10',name:'Dayana',email:'d@h.com'
+    rideId:'2',from:'Bangalore',to:'Goa',date:'Jan 2',image:'https://www.telegraph.co.uk/content/dam/news/2016/05/16/98107752_Salma-Hayek-NEWS_1_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg?imwidth=1400',
+    price:5,time:'07.10',name:'Salma',email:'d@h.com'
   },
-  new Ride('3','megan','Bangalore','X','05.10','Dec 31','https://media1.popsugar-assets.com/files/thumbor/JAXTYV1y1ayTltzzuA6Gha3m-zM/fit-in/550x550/filters:format_auto-!!-:strip_icc-!!-/2016/05/16/781/n/1922398/acef50d9_edit_img_image_23097206_1445069400_728/i/Megan-Fox-Hottest-Bikini-Pictures.jpg',
-    10,'a@b.com')*/
+  new Ride('3','Aaron','Bangalore','X','05.10','Dec 31','https://upload.wikimedia.org/wikipedia/commons/2/26/Aaron_Swartz_2_at_Boston_Wikipedia_Meetup%2C_2009-08-18.jpg',
+    10,'a@b.com')
 ];
 
-private requested_rides:Ride[] = [/*{
-  rideId:'1',from:'Bangalor',to:'Chennai',date:'Jan 1',image:'http://3.bp.blogspot.com/_FeuPKiPt1o4/S6smmvfb4kI/AAAAAAAAAtQ/x_QLB8IzO14/s1600/USA+Top+Hot+Girl+Scarlett+Johansson+Bold.jpg',
-  price:10,time:'10.10',name:'Scarlett',email:'a@y.com'
+private requested_rides:Ride[] = [{
+  rideId:'1',from:'Bangalor',to:'Chennai',date:'Jan 1',image:'https://si.wsj.net/public/resources/images/BN-BY925_mag041_OZ_20140318165119.jpg',
+  price:10,time:'10.10',name:'Johansson',email:'a@y.com'
 },{
-  rideId:'2',from:'Bangalore',to:'Goa',date:'Jan 2',image:'http://4everstatic.com/pictures/850xX/people/actors-and-actresses/salma-hayek,-purple-dress-251369.jpg',
-  price:5,time:'07.10',name:'Dayana',email:'a@t.com'
+  rideId:'2',from:'Bangalore',to:'Goa',date:'Jan 2',image:'https://www.telegraph.co.uk/content/dam/news/2016/05/16/98107752_Salma-Hayek-NEWS_1_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg?imwidth=1400',
+  price:5,time:'07.10',name:'Hayek',email:'a@t.com'
 },
-new Ride('3','megan','Bangalore','X','05.10','Dec 31','https://media1.popsugar-assets.com/files/thumbor/JAXTYV1y1ayTltzzuA6Gha3m-zM/fit-in/550x550/filters:format_auto-!!-:strip_icc-!!-/2016/05/16/781/n/1922398/acef50d9_edit_img_image_23097206_1445069400_728/i/Megan-Fox-Hottest-Bikini-Pictures.jpg',
-  10,'a@x.com')*/
+new Ride('3','Swartz','Bangalore','X','05.10','Dec 31','https://upload.wikimedia.org/wikipedia/commons/2/26/Aaron_Swartz_2_at_Boston_Wikipedia_Meetup%2C_2009-08-18.jpg',
+  10,'a@x.com')
 ];
 
 private ip:string='149.165.171.121:5000';
